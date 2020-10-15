@@ -1,0 +1,12 @@
+.consultation {
+    min-height: 680px;
+    padding: 100px 0 92px;
+    background: url(../img/bg_block3.png) center (center/cover) no-repeat;
+    &__subheader {
+        text-align: left;
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 80px;
+    }
+}
