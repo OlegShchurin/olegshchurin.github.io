@@ -24,7 +24,7 @@
 				</div>
 				<div class="header__contacts">
 					<a href="tel:+7(499)922-89-74" class="header__phone">+7 (499) 922-89-74</a>
-					<button class="button">заказать звонок</button>
+					<button class="button" data-modal="consultation">заказать звонок</button>
 				</div>
 			</header>
 			
@@ -46,7 +46,7 @@
 					</div>
 				</div>
 				
-				<button class="button button_main">заказать консультацию</button>
+				<button class="button button_main" data-modal="consultation">заказать консультацию</button>
 				<div class="promo__link">
 					или
 					<a href="#"> ПЕРЕЙТИ В КАТАЛОГ</a>
@@ -97,11 +97,11 @@
 				Просто заполните форму заявки<br>
 				и мы перезвоним вам в течении 10 минут
 			</div>
-			<form action:"#">
-				<input name="name" type="text" class="consultation__input" required placeholder="Ваше имя"></input>
-				<input name="phone" type="tel" class="consultation__input" required placeholder="Ваш телефон"></input>
-				<input name="email" type="email" class="consultation__input" required placeholder="Ваш E-mail"></input>
-				<button class="button button_consultation">заказать кОНСУЛЬТАЦИЮ</button>
+			<form class="forms" action:"#">
+				<input name="name" type="text" class="consultation__input" placeholder="Ваше имя"></input>
+				<input name="phone" type="tel" class="consultation__input" placeholder="Ваш телефон"></input>
+				<input name="email" type="email" class="consultation__input" placeholder="Ваш E-mail"></input>
+				<button class="button button_consultation">заказать консультацию</button>
 			</form>
 		</div>
 	</section>
@@ -204,7 +204,7 @@
 					<div class="catalog-item__wrapper">
 						<div class="catalog-item__content catalog-item__content_active">
 							<img src="img/small_polar.png" alt="polar" class="catalog-item__img">
-							<div class="catalog-item__name">Пульсометр Polar FT1</div>
+							<div class="catalog-item__name">Пульсометр Polar FT2</div>
 							<div class="catalog-item__descr">Для первых шагов в тренировках, основанных на сердечном ритме</div>
 							<a href="" class="catalog-item__details">ПОДРОБНЕЕ</a>
 						</div>
@@ -403,8 +403,46 @@
 		</div>
 	</section>
 
+	<div class="overlay"></div>
+
+	<div class="modal" id="consultation">
+		<div class="modal__close">&times</div>
+		<div class="modal__header">Просто заполните форму заявки</div>
+		<div class="modal__subheader">и мы перезвоним вам в течении 10 минут</div>
+
+		<form class="forms forms_mt25px" id='form-consultation' action:"#">
+			<input name="name" type="text" class="consultation__input" placeholder="Ваше имя"></input>
+			<input name="phone" type="tel" class="consultation__input" placeholder="Ваш телефон"></input>
+			<input name="email" type="email" class="consultation__input" placeholder="Ваш E-mail"></input>
+			<button class="button button_consultation">заказать консультацию</button>
+		</form>
+
+	</div>
+
+	<div class="modal" id="order">
+		<div class="modal__close">&times</div>
+		<div class="modal__header">Ваш заказ:</div>
+		<div class="modal__subheader">Пульсометр Polar FT1</div>
+
+		<form class="forms forms_mt25px" id='form-order' action:"#">
+			<input name="name" type="text" class="consultation__input" placeholder="Ваше имя"></input>
+			<input name="phone" type="tel" class="consultation__input" placeholder="Ваш телефон"></input>
+			<input name="email" type="email" class="consultation__input" placeholder="Ваш E-mail"></input>
+			<button class="button button_consultation">купить</button>
+		</form>
+
+	</div>
+
+	<div class="modal modal_thanks" id="thanks">
+		<div class="modal__close">&times</div>
+		<div class="modal__header">Спасибо за вашу заявку!</div>
+		<div class="modal__subheader">Наш менеджер свяжется с вами в ближайшее время!</div>
+	</div>
+
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/jquery.maskedinput.min.js"></script>
 	<script src="js/slick.min.js"></script>
 	<script src="js/script.js"></script>
 </body>

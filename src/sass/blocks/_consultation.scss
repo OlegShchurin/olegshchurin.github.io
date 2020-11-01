@@ -9,4 +9,16 @@
         font-weight: 500;
         margin-top: 80px;
     }
+    .error {
+        color: $main-color;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 16px;
+        margin-bottom: 15px;
+        border: 2px solid red;
+    }
+    label.error {
+        border: none;
+        color: white;
+    }
 }

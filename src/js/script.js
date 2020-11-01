@@ -24,4 +24,85 @@ $(document).ready(function(){
 
     toggleSlide('.catalog-item__details');
     toggleSlide('.catalog-item__back');
+
+    //Modal
+
+    $('[data-modal=consultation]').on('click', function() {
+       $('#consultation, .overlay').fadeIn();
+    });
+
+    $('.modal__close').on('click', function() {
+        $('#consultation, .overlay, #order, #thanks').fadeOut();
+    });
+
+    $('.catalog-item__btn').each(function(i) {
+        $(this).on('click', function() {
+            $('#order .modal__subheader').text($('.catalog-item__name').eq(i).text());
+            $('#order, .overlay').fadeIn();
+        });
+    });
+
+    $('#form-consultation, #form-order').validate({
+        rules: {
+          name: "required",
+          email: {
+                required: true,
+                email: true
+          },
+          phone: {
+                required: true,
+                minlength: 12
+          }
+        },
+        messages: {
+            name: {
+                required: "Вы не ввели имя, мы хотим называть вас по имени 😊",
+            },
+            email: {
+                required: "Вы не ввели email адрес, а если недозвонимся?",
+                email: "Это не email. Введите, пожалуйста, вашу почту"
+            },
+            phone: {
+                required: "Без телефона мы не сможем вам позвонить 😞",
+                minlength: jQuery.validator.format("Введен неверный формат телефона, введите {0} символов")
+            }
+        }
+    }); 
+
+    function validateForm (form) {
+        $(form).validate({
+            rules: {
+              name: "required",
+              email: {
+                    required: true,
+                    email: true
+              },
+              phone: {
+                    required: true,
+                    minlength: 12
+              }
+            },
+            messages: {
+                name: {
+                    required: "Вы не ввели имя, мы хотим называть вас по имени 😊",
+                },
+                email: {
+                    required: "Вы не ввели email адрес, а если недозвонимся?",
+                    email: "Это не email. Введите, пожалуйста, вашу почту"
+                },
+                phone: {
+                    required: "Без телефона мы не сможем вам позвонить 😞",
+                    minlength: jQuery.validator.format("Введен неверный формат телефона, введите {0} символов")
+                }
+            }
+        });
+    };
+
+    validateForm ("#form-consultation");
+    validateForm ("#form-order");
+    validateForm (".consultation .forms");
+
+    $("input[name=phone]").mask("(999) 999-9999");
+
+
   });

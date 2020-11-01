@@ -1,4 +1,4 @@
-form {
+.forms {
     margin-top: 36px;
     display: flex;
     flex-direction: column;
@@ -15,4 +15,7 @@ form {
             margin-bottom: 20px;
         }
     }
-} 
+    &_mt25px {
+        margin-top: 25px;
+    }
+}
