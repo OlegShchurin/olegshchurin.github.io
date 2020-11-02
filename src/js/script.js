@@ -121,17 +121,19 @@ $(document).ready(function(){
     //smooth scroll and page up
 
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 1600) {
-            $('.pageup').fadeIn()
+        if ($(this).scrollTop() > 800) {
+            $('.page-up').fadeIn()
         } else {
-            $('.pageup').fadeOut()
+            $('.page-up').fadeOut()
         }
     });
 
-    $("a[href^='#']").click(function(){
+    $("a[href=#up]").click(function(){
         const _href = $(this).attr("href");
         $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
         return false;
     });
+
+    new WOW().init();
 
   });

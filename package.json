@@ -2,7 +2,9 @@
   "name": "pulsometr",
   "version": "1.0.0",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "wow.js": "^1.2.2"
+  },
   "devDependencies": {
     "browser-sync": "^2.26.12",
     "gulp": "^4.0.2",
