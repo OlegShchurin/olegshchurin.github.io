@@ -13,6 +13,9 @@
     }
     &__img {
         height: 100%;
+        img {
+            font-size: 0px;
+        }
     }
     &__wrapper {
         width: 712px;
