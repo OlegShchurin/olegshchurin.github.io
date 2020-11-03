@@ -112,6 +112,8 @@ $(document).ready(function(){
             data: $(this).serialize()
         }).done(function() {
             $(this).find("imput").val("");
+            $('#consultation, #order').fadeOut();
+            $('.overlay, #thanks').fadeIn('slow');
 
             $('form').trigger('reset');
         });
